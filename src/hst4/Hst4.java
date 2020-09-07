@@ -9,6 +9,7 @@ public class Hst4  extends Applet {
     }
 
     public void paint(Graphics g) {
+// dit is opdracht 4.1 tot en met 4.4
         setBackground(Color.black);
         //dit is de gelijkbenige driehoek
         g.setColor(Color.blue);
@@ -54,6 +55,6 @@ public class Hst4  extends Applet {
         g.setColor(Color.blue);
         g.fillRect(100,150,40,100);
         g.setColor(Color.GREEN);
-        g.fillRect(145,);
+        g.fillRect(145,170,30,80);
     }
 }
