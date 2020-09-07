@@ -37,6 +37,9 @@ public class Hst4  extends Applet {
 
         //dit is het staafdiagram
         g.setColor(Color.white);
-        g.drawLine(50,250,50,180);
+        g.drawLine(50,250,50,150);
+        g.drawLine(50,250,150,250);
+        g.drawString("kg",40,145);
+
     }
 }
