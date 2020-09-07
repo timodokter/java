@@ -38,8 +38,22 @@ public class Hst4  extends Applet {
         //dit is het staafdiagram
         g.setColor(Color.white);
         g.drawLine(50,250,50,150);
-        g.drawLine(50,250,150,250);
-        g.drawString("kg",40,145);
-
+        g.drawLine(50,250,180,250);
+        g.drawString("kg",40,140);
+        g.drawString("100-",26,154);
+        g.drawString("80-",33,175);
+        g.drawString("60-",33,195);
+        g.drawString("40-",33,215);
+        g.drawString("20-",33,235);
+        g.drawString("0-",40,254);
+        g.drawString("Valerie",55,260);
+        g.drawString("Jeroen",100,260);
+        g.drawString("Hans",145,260);
+        g.setColor(Color.red);
+        g.fillRect(55,212,40,38);
+        g.setColor(Color.blue);
+        g.fillRect(100,150,40,100);
+        g.setColor(Color.GREEN);
+        g.fillRect(145,);
     }
 }
