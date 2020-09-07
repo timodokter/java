@@ -56,5 +56,9 @@ public class Hst4  extends Applet {
         g.fillRect(100,150,40,100);
         g.setColor(Color.GREEN);
         g.fillRect(145,170,30,80);
+
+        //dit is een stoplicht
+        g.setColor(Color.gray);
+        g.fillArc();
     }
 }
