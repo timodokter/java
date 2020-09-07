@@ -17,7 +17,12 @@ public class Hst4  extends Applet {
         g.drawLine(50,120,150,120);
 
         //dit is het huisje
+        g.setColor(Color.red);
+        g.drawRect(180,90,30,60);
+        g.drawRect();
         g.setColor(Color.GREEN);
         g.drawRect(170,70,100,80);
+        g.drawLine(170,70,270,10);
+        g.drawLine(270,10,270,70);
     }
 }
