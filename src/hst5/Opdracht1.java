@@ -34,11 +34,9 @@ public class Opdracht1 extends Applet {
         g.setColor(lijnkleur);
         g.drawRoundRect(100, 225, breedte, hoogte, 30, 30);
 
-        //Gevulde rechthoek
+        //Gevulde rechthoek met ovaal
         g.setColor(opvulkleur);
         g.fillRect(315, 100, breedte, hoogte);
-
-        //Ovaal
         g.setColor(lijnkleur);
         g.drawOval(315, 100, breedte, hoogte);
 
@@ -62,13 +60,13 @@ public class Opdracht1 extends Applet {
 
         //teksten
         g.setColor(lijnkleur);
-        g.drawString("Lijn",100,95);
-        g.drawString("Rechthoek",15,25);
-        g.drawString("Afgeronde rechhoek",15,75);
-        g.drawString("Gevulde rechthoek met ovaal",125,20);
-        g.drawString("Gevulde ovaal",125,80);
-        g.drawString("Taartpunt met ovaal eromheen",235,25);
-        g.drawString("Cirkel",235,70);
+        g.drawString("Lijn",190,95);
+        g.drawString("Rechthoek",175,215);
+        g.drawString("Afgeronde rechhoek",150,340);
+        g.drawString("Gevulde rechthoek met ovaal",330,215);
+        g.drawString("Gevulde ovaal",375,340);
+        g.drawString("Taartpunt met ovaal eromheen",540,215);
+        g.drawString("Cirkel",555,340);
 
     }
 }
