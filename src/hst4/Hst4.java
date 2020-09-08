@@ -9,7 +9,7 @@ public class Hst4  extends Applet {
     }
 
     public void paint(Graphics g) {
-// dit is opdracht 4.1 tot en met 4.4
+// dit is opdracht 4.1 tot en met 4.4 en 4.6 tot en met 4.7
         setBackground(Color.black);
         //dit is de gelijkbenige driehoek
         g.setColor(Color.blue);
