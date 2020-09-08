@@ -68,5 +68,14 @@ public class Hst4  extends Applet {
         g.fillArc(210,210,20,20,0,360);
         g.setColor(Color.green);
         g.fillArc(210,235,20,20,0,360);
+
+        //dit is de dobbelsteen
+        g.setColor(Color.white);
+        g.fillRoundRect(250,175,40,40,10,10);
+        g.setColor(Color.BLACK);
+        g.fillArc(257,182,10,10,0,360);
+        g.fillArc(257,197,10,10,0,360);
+        g.fillArc(272,182,10,10,0,360);
+        g.fillArc(272,197,10,10,0,360);
     }
 }
