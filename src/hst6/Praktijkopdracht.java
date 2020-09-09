@@ -23,7 +23,7 @@ public class Praktijkopdracht extends Applet{
         cijfer3 = 6.9;
         uitkomst = (cijfer1 + cijfer2 + cijfer3) / 3;
         uitkomstgemiddelde = (int) (uitkomst * 10);
-        definitieveuitkomst = uitkomstgemiddelde/10;
+        definitieveuitkomst = uitkomstgemiddelde/10.0;
     }
 
     public void paint(Graphics g) {
