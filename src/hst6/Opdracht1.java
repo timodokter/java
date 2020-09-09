@@ -7,7 +7,7 @@ public class Opdracht1 extends Applet{
     //decleratie
     Color achtergrondkleur;
     Color tekstkleur;
-    double uitkomstJan;
+    int uitkomstJan;
     double uitkomstAli;
     double uitkomstJeanette;
     double uitkomstTimo;
@@ -21,7 +21,7 @@ public class Opdracht1 extends Applet{
         bedrag = 113;
         aantalmensen = 4;
         uitkomstAli = bedrag / aantalmensen;
-        uitkomstJan = bedrag / aantalmensen;
+        uitkomstJan = (int) (bedrag / aantalmensen);
         uitkomstJeanette = bedrag / aantalmensen;
         uitkomstTimo = bedrag / aantalmensen;
     }
