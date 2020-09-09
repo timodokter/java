@@ -7,23 +7,17 @@ import java.awt.event.*;
 
 public class Opdracht1 extends Applet {
     Button knop;
-    String schermtekst;
+    Label label;
+    TextField tekstvak;
 
     public void init() {
-        schermtekst = "Doet deze knop wel iets?";
+        tekstvak = new TextField("klik op mij");
         knop = new Button("Klik op mij");
-        KnopListener kl = new KnopListener();
-        knop.addActionListener( kl );
+        label = new Label("type iets in het tekstvakje");
+        add(label);
+        add(tekstvak);
         add(knop);
     }
 
-    public void paint(Graphics g) {
-        g.drawString(schermtekst, 50, 60 );
-    }
-
-    class KnopListener implements ActionListener {
-        public void actionPerformed( ActionEvent e ) {
-            schermtekst = "Ja, deze knop doet wel iets";
-        }
-    }
+    public void paint(Graphics g) {}
 }
