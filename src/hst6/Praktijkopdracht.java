@@ -12,7 +12,7 @@ public class Praktijkopdracht extends Applet{
     double cijfer2;
     double cijfer3;
     int uitkomstgemiddelde;
-    float definitieveuitkomst;
+    double definitieveuitkomst;
 
     public void init() {
         //initialisatie
@@ -23,7 +23,7 @@ public class Praktijkopdracht extends Applet{
         cijfer3 = 6.9;
         uitkomst = (cijfer1 + cijfer2 + cijfer3) / 3;
         uitkomstgemiddelde = (int) (uitkomst * 10);
-        definitieveuitkomst = uitkomstgemiddelde / 10;
+        definitieveuitkomst = uitkomstgemiddelde/10;
     }
 
     public void paint(Graphics g) {
