@@ -13,7 +13,7 @@ public class Opdracht3 extends Applet{
 
     public void init() {
         //initialisatie
-        achtergrondkleur = Color.blue;
+        achtergrondkleur = Color.white;
         tekstkleur = Color.black;
         a = 2147483647;
         b= 5;
@@ -23,6 +23,6 @@ public class Opdracht3 extends Applet{
     public void paint(Graphics g) {
         setBackground(achtergrondkleur);
         g.setColor(tekstkleur);
-
+        g.drawString("De uitkomst is: " + uitkomst,20,20);
     }
 }
