@@ -17,6 +17,7 @@ public class Opdracht2 extends Applet {
     int secperjaar;
 
     public void init() {
+        //initialisatie
         achtergrondkleur = Color.black;
         tekstkleur = Color.white;
         secperminuut = 60;
