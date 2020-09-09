@@ -23,6 +23,6 @@ public class Opdracht3 extends Applet{
     public void paint(Graphics g) {
         setBackground(achtergrondkleur);
         g.setColor(tekstkleur);
-        g.drawString("");
+
     }
 }
