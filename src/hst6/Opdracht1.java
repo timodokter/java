@@ -21,7 +21,7 @@ public class Opdracht1 extends Applet{
         bedrag = 113;
         aantalmensen = 4;
         uitkomstAli = bedrag / aantalmensen;
-        uitkomstJan = (bedrag / aantalmensen);
+        uitkomstJan = bedrag / aantalmensen;
         uitkomstJeanette = bedrag / aantalmensen;
         uitkomstTimo = bedrag / aantalmensen;
     }
