@@ -22,6 +22,8 @@ public class Opdracht2 extends Applet{
     double dpvrouwl;
     String stotaal;
     double dtotaal;
+    String sopsommingtotaal;
+    double dopsommingtotaal;
 
     public void init() {
         //initialisatie
@@ -44,7 +46,8 @@ public class Opdracht2 extends Applet{
         spvrouwl = Double.toString(dpvrouwl);
         dtotaal = 0;
         stotaal = Double.toString(dtotaal);
-
+        dopsommingtotaal = dm + dv + dpmanl + dpvrouwl;
+        sopsommingtotaal = Double.toString(dopsommingtotaal);
 
         //button initilisatie
         man.addActionListener(new knoplistenerman() );
@@ -77,7 +80,6 @@ public class Opdracht2 extends Applet{
     class knoplistenerman implements ActionListener {
         public void actionPerformed( ActionEvent e ) {
             sm = tekstvak.getText();
-            stotaal = sm + sv + spmanl + spvrouwl;
             repaint();
         }
     }
