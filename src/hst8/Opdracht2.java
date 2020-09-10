@@ -22,8 +22,6 @@ public class Opdracht2 extends Applet{
     double dpvrouwl;
     String stotaal;
     double dtotaal;
-    String sopsommingtotaal;
-    double dopsommingtotaal;
 
     public void init() {
         //initialisatie
@@ -46,7 +44,6 @@ public class Opdracht2 extends Applet{
         spvrouwl = Double.toString(dpvrouwl);
         dtotaal = 0;
         stotaal = Double.toString(dtotaal);
-        dtotaal = Double.parseDouble(sm)+Double.parseDouble(sv)+Double.parseDouble(spmanl)+Double.parseDouble(spvrouwl);
 
         //button initilisatie
         man.addActionListener(new knoplistenerman() );
@@ -69,11 +66,11 @@ public class Opdracht2 extends Applet{
     g.drawString("potientiele mannelijke leerlingen: ",20,80);
     g.drawString("potientiele vrouwlijke leerlingen: ",20,95);
     g.drawString("Totale aantal bezoekers: ",20,110);
-    g.drawString(sm,150,50);
-    g.drawString(sv,150,65);
-    g.drawString(spmanl,210,80);
-    g.drawString(spvrouwl,200,95);
-    g.drawString(stotaal,160,110);
+    g.drawString(sm,144,50);
+    g.drawString(sv,137,65);
+    g.drawString(spmanl,202,80);
+    g.drawString(spvrouwl,196,95);
+    g.drawString(stotaal,155,110);
     }
 
     class knoplistenerman implements ActionListener {
