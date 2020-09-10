@@ -46,8 +46,7 @@ public class Opdracht2 extends Applet{
         spvrouwl = Double.toString(dpvrouwl);
         dtotaal = 0;
         stotaal = Double.toString(dtotaal);
-        dopsommingtotaal = dm + dv + dpmanl + dpvrouwl;
-        sopsommingtotaal = Double.toString(dopsommingtotaal);
+        dtotaal = Double.parseDouble(sm)+Double.parseDouble(sv)+Double.parseDouble(spmanl)+Double.parseDouble(spvrouwl);
 
         //button initilisatie
         man.addActionListener(new knoplistenerman() );
@@ -80,6 +79,8 @@ public class Opdracht2 extends Applet{
     class knoplistenerman implements ActionListener {
         public void actionPerformed( ActionEvent e ) {
             sm = tekstvak.getText();
+            dtotaal = Double.parseDouble(sm)+Double.parseDouble(sv)+Double.parseDouble(spmanl)+Double.parseDouble(spvrouwl);
+            stotaal = Double.toString(dtotaal);
             repaint();
         }
     }
@@ -87,6 +88,8 @@ public class Opdracht2 extends Applet{
     class knoplistenervrouw implements ActionListener {
         public void actionPerformed( ActionEvent e ) {
             sv = tekstvak.getText();
+            dtotaal = Double.parseDouble(sm)+Double.parseDouble(sv)+Double.parseDouble(spmanl)+Double.parseDouble(spvrouwl);
+            stotaal = Double.toString(dtotaal);
             repaint();
         }
     }
@@ -94,6 +97,8 @@ public class Opdracht2 extends Applet{
     class knoplistenerpmanl implements ActionListener {
         public void actionPerformed( ActionEvent e ) {
             spmanl = tekstvak.getText();
+            dtotaal = Double.parseDouble(sm)+Double.parseDouble(sv)+Double.parseDouble(spmanl)+Double.parseDouble(spvrouwl);
+            stotaal = Double.toString(dtotaal);
             repaint();
         }
     }
@@ -101,6 +106,8 @@ public class Opdracht2 extends Applet{
     class knoplistenerpvrouwl implements ActionListener {
         public void actionPerformed( ActionEvent e ) {
             spvrouwl = tekstvak.getText();
+            dtotaal = Double.parseDouble(sm)+Double.parseDouble(sv)+Double.parseDouble(spmanl)+Double.parseDouble(spvrouwl);
+            stotaal = Double.toString(dtotaal);
             repaint();
         }
     }
