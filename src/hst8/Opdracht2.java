@@ -6,26 +6,27 @@ import java.awt.event.*;
 
 public class Opdracht2 extends Applet{
     //decleratie
-    int m;
-    int v;
-    int pml;
-    int pvl;
-    int totaal;
     Label label;
     TextField tekstvak;
     Button man;
     Button vrouw;
     Button pmanl;
     Button pvrouwl;
-    int sm;
+    String sm;
+    double dm;
     String sv;
+    double dv;
     String spmanl;
+    double dpmanl;
     String spvrouwl;
+    double dpvrouwl;
+    String stotaal;
+    double dtotaal;
 
     public void init() {
         //initialisatie
         setSize(800,400);
-        tekstvak = new TextField("");
+        tekstvak = new TextField("",5);
         label = new Label("type in het tekstvak het aantal mensen voor die groep");
         man = new Button("mannelijk");
         vrouw = new Button("vrouwlijk");
@@ -33,15 +34,23 @@ public class Opdracht2 extends Applet{
         pvrouwl = new Button("potientiele vrouwlijke leerlingen");
 
         //initialisatie personen
-        m = 0;
-        v = 0;
-        pml = 0;
-        pvl = 0;
-        totaal = m + v + pml + pvl;
-        sm = 0;
+        dm = 0;
+        sm = Double.toString(dm);
+        dv = 0;
+        sv = Double.toString(dv);
+        dpmanl = 0;
+        spmanl = Double.toString(dpmanl);
+        dpvrouwl = 0;
+        spvrouwl = Double.toString(dpvrouwl);
+        dtotaal = 0;
+        stotaal = Double.toString(dtotaal);
+
 
         //button initilisatie
         man.addActionListener(new knoplistenerman() );
+        vrouw.addActionListener(new knoplistenervrouw());
+        pmanl.addActionListener(new knoplistenerpmanl());
+        pvrouwl.addActionListener(new knoplistenerpvrouwl());
 
         //add initialisatie
         add(label);
@@ -58,11 +67,38 @@ public class Opdracht2 extends Applet{
     g.drawString("potientiele mannelijke leerlingen: ",20,80);
     g.drawString("potientiele vrouwlijke leerlingen: ",20,95);
     g.drawString("Totale aantal bezoekers: ",20,110);
+    g.drawString(sm,150,50);
+    g.drawString(sv,150,65);
+    g.drawString(spmanl,210,80);
+    g.drawString(spvrouwl,200,95);
+    g.drawString(stotaal,160,110);
     }
 
     class knoplistenerman implements ActionListener {
         public void actionPerformed( ActionEvent e ) {
             sm = tekstvak.getText();
+            stotaal = sm + sv + spmanl + spvrouwl;
+            repaint();
+        }
+    }
+
+    class knoplistenervrouw implements ActionListener {
+        public void actionPerformed( ActionEvent e ) {
+            sv = tekstvak.getText();
+            repaint();
+        }
+    }
+
+    class knoplistenerpmanl implements ActionListener {
+        public void actionPerformed( ActionEvent e ) {
+            spmanl = tekstvak.getText();
+            repaint();
+        }
+    }
+
+    class knoplistenerpvrouwl implements ActionListener {
+        public void actionPerformed( ActionEvent e ) {
+            spvrouwl = tekstvak.getText();
             repaint();
         }
     }
