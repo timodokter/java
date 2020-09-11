@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Opdracht1 extends Applet{
+public class Opdracht1en2 extends Applet{
     //decleratie
     TextField tekstvak;
     double tekst;
