@@ -30,7 +30,7 @@ public class Opdracht3 extends Applet {
     }
 
     public void paint(Graphics g) {
-        g.drawString("dit is de maand die bij uw nummer hoort en hoeveel dagen deze maand heeft: " + antwoord,20,50);
+        g.drawString(antwoord,20,50);
     }
 
     private class textlistenertmaand implements ActionListener {
@@ -40,12 +40,65 @@ public class Opdracht3 extends Applet {
             if (dmaand == 1) {
                 smaand = "Januari";
                 sdagen = "31";
-                antwoord = smaand + " en " + sdagen + " dagen.";
+                antwoord = "dit is de maand die bij uw nummer hoort en hoeveel dagen deze maand heeft: " + smaand + " en " + sdagen + " dagen.";
             }
             if (dmaand == 2) {
                 smaand = "Februari";
-                sdagen = "";
-                antwoord = smaand + " en " + sdagen + " dagen.";
+                sdagen = "28 of 29";
+                antwoord = "dit is de maand die bij uw nummer hoort en hoeveel dagen deze maand heeft: " + smaand + " en " + sdagen + " dagen.";
+            }
+            if (dmaand == 3) {
+                smaand = "Maart";
+                sdagen = "31";
+                antwoord = "dit is de maand die bij uw nummer hoort en hoeveel dagen deze maand heeft: " + smaand + " en " + sdagen + " dagen.";
+            }
+            if (dmaand == 4) {
+                smaand = "April";
+                sdagen = "30";
+                antwoord = "dit is de maand die bij uw nummer hoort en hoeveel dagen deze maand heeft: " + smaand + " en " + sdagen + " dagen.";
+            }
+            if (dmaand == 5) {
+                smaand = "Mei";
+                sdagen = "31";
+                antwoord = "dit is de maand die bij uw nummer hoort en hoeveel dagen deze maand heeft: " + smaand + " en " + sdagen + " dagen.";
+            }
+            if (dmaand == 6) {
+                smaand = "Juni";
+                sdagen = "30";
+                antwoord = "dit is de maand die bij uw nummer hoort en hoeveel dagen deze maand heeft: " + smaand + " en " + sdagen + " dagen.";
+            }
+            if (dmaand == 7) {
+                smaand = "Juli";
+                sdagen = "31";
+                antwoord = "dit is de maand die bij uw nummer hoort en hoeveel dagen deze maand heeft: " + smaand + " en " + sdagen + " dagen.";
+            }
+            if (dmaand == 8) {
+                smaand = "Augustus";
+                sdagen = "31";
+                antwoord = "dit is de maand die bij uw nummer hoort en hoeveel dagen deze maand heeft: " + smaand + " en " + sdagen + " dagen.";
+            }
+            if (dmaand == 9) {
+                smaand = "September";
+                sdagen = "30";
+                antwoord = "dit is de maand die bij uw nummer hoort en hoeveel dagen deze maand heeft: " + smaand + " en " + sdagen + " dagen.";
+            }
+            if (dmaand == 10) {
+                smaand = "Oktober";
+                sdagen = "31";
+                antwoord = "dit is de maand die bij uw nummer hoort en hoeveel dagen deze maand heeft: " + smaand + " en " + sdagen + " dagen.";
+            }
+            if (dmaand == 11) {
+                smaand = "November";
+                sdagen = "30";
+                antwoord = "dit is de maand die bij uw nummer hoort en hoeveel dagen deze maand heeft: " + smaand + " en " + sdagen + " dagen.";
+            }
+            if (dmaand == 12) {
+                smaand = "December";
+                sdagen = "31";
+                antwoord = "dit is de maand die bij uw nummer hoort en hoeveel dagen deze maand heeft: " + smaand + " en " + sdagen + " dagen.";
+            }
+            if (dmaand >= 13){
+                antwoord = "dit nummer is geen geldige maand";
             }
             repaint();
         }
