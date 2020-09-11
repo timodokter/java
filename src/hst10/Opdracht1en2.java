@@ -29,7 +29,7 @@ public class Opdracht1en2 extends Applet{
     }
 
     public void paint(Graphics g) {
-        g.drawString("het laatste getal dat u heeft ingevoerd is: " + laagstenummer,20,55);
+        g.drawString("het laagste getal dat u heeft ingevoerd is: " + laagstenummer,20,55);
         g.drawString("het hoogste getal dat u heeft ingevoerd is: " + nummer,20,40);
     }
 
