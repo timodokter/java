@@ -5,19 +5,17 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Opdracht1en2 extends Applet{
+public class Opdracht1 extends Applet{
     //decleratie
     TextField tekstvak;
     double tekst;
     double nummer;
     String s;
     Label label;
-    double laagstenummer;
 
     public void init() {
         //initialisatie tekst
         nummer = 5;
-        laagstenummer = 5;
         tekstvak = new TextField("",5);
         tekstvak.addActionListener(new tekstvaklistener());
         label = new Label("type een nummer in het tekstvak en drup op enter");
@@ -29,7 +27,6 @@ public class Opdracht1en2 extends Applet{
     }
 
     public void paint(Graphics g) {
-        g.drawString("het laagste getal dat u heeft ingevoerd is: " + laagstenummer,20,55);
         g.drawString("het hoogste getal dat u heeft ingevoerd is: " + nummer,20,40);
     }
 
@@ -39,9 +36,6 @@ public class Opdracht1en2 extends Applet{
             tekst = Double.parseDouble(s);
             if (tekst > nummer ) {
                 nummer = tekst;
-            }
-            if (tekst < laagstenummer) {
-                laagstenummer = tekst;
             }
             repaint();
         }
