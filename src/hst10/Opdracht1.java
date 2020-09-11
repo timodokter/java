@@ -12,10 +12,12 @@ public class Opdracht1 extends Applet{
     double nummer;
     String s;
     Label label;
+    double laagstenummer;
 
     public void init() {
         //initialisatie tekst
-        nummer = 0.0;
+        nummer = 5;
+        laagstenummer = 5;
         tekstvak = new TextField("",5);
         tekstvak.addActionListener(new tekstvaklistener());
         label = new Label("type een nummer in het tekstvak en drup op enter");
@@ -27,6 +29,7 @@ public class Opdracht1 extends Applet{
     }
 
     public void paint(Graphics g) {
+        g.drawString("het laatste getal dat u heeft ingevoerd is: " + laagstenummer,20,55);
         g.drawString("het hoogste getal dat u heeft ingevoerd is: " + nummer,20,40);
     }
 
@@ -34,8 +37,11 @@ public class Opdracht1 extends Applet{
         public void actionPerformed(ActionEvent e) {
             s = tekstvak.getText();
             tekst = Double.parseDouble(s);
-            if (tekst > nummer) {
+            if (tekst > nummer ) {
                 nummer = tekst;
+            }
+            if (tekst < laagstenummer) {
+                laagstenummer = tekst;
             }
             repaint();
         }
