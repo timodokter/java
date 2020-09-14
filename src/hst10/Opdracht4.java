@@ -56,6 +56,11 @@ public class Opdracht4 extends Applet {
                 sdagen = "29";
                 antwoord = "dit is het jaartal en de maand die bij uw nummers hoort en hoeveel dagen deze maand dan heeft: " + smaand + " " + sjaar + " en " + sdagen + " dagen.";
             }
+            if (!(djaar % 4 == 0 && !(djaar % 100 == 0)) || djaar % 400 == 0 && dmaand == 2) {
+                smaand = "Februari";
+                sdagen = "28";
+                antwoord = "dit is het jaartal en de maand die bij uw nummers hoort en hoeveel dagen deze maand dan heeft: " + smaand + " " + sjaar + " en " + sdagen + " dagen.";
+            }
             if (dmaand == 3) {
                 smaand = "Maart";
                 sdagen = "31";
