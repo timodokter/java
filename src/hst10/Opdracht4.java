@@ -8,24 +8,31 @@ import java.awt.event.ActionListener;
 public class Opdracht4 extends Applet {
     //decleratie
 
-    Label label;
+    Label labelmaand;
+    Label labeljaar;
+    TextField tjaar;
     TextField tmaand;
+    String sjaar;
     String smaand;
     String sdagen;
     String antwoord;
     double dmaand;
+    double djaar;
 
     public void init() {
         //initialisatie
         setSize(800, 400);
         antwoord = "";
         smaand = "dit is geen geldig nummer";
-        label = new Label("type een maand nummer in het tekstvak en druk op enter. op deze manier: 2020,1 dus links het jaar en rechts de maand");
+        labelmaand = new Label("type een maand nummer in het tekstvak en druk op enter.");
+        labeljaar = new Label("type een jaartal in het tekstvak en druk op enter.");
+        tjaar = new TextField("",5);
+        tjaar.addActionListener(new textlistenertjaar());
         tmaand = new TextField("",5);
         tmaand.addActionListener(new textlistenertmaand());
 
         //initialisatie add's
-        add(label);
+        add(labelmaand);
         add(tmaand);
     }
 
@@ -37,6 +44,7 @@ public class Opdracht4 extends Applet {
         public void actionPerformed(ActionEvent e) {
             smaand = tmaand.getText();
             dmaand = Double.parseDouble(smaand);
+            djaar = Double.parseDouble(sjaar);
             if (dmaand == 1) {
                 smaand = "Januari";
                 sdagen = "31";
@@ -99,6 +107,22 @@ public class Opdracht4 extends Applet {
             }
             if (dmaand >= 13){
                 antwoord = "dit nummer is geen geldige maand";
+            }
+            repaint();
+        }
+    }
+
+    private class textlistenertjaar implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            sjaar = tjaar.getText();
+            smaand = tmaand.getText();
+            dmaand = Double.parseDouble(smaand);
+            djaar = Double.parseDouble(sjaar);
+            if ( (djaar % 4 == 0 ) && !(djaar % 100 == 0) || (djaar % 400 == 0) && dmaand == 2) {
+                antwoord = "dit jaar is een schrikkeljaar dus heeft februari 29 dagen";
+            }
+            if (dmaand == 2) {
+                antwoord = "dit jaar is geen schrikkeljaar en februari heeft dus gewoon 28 dagen";
             }
             repaint();
         }
