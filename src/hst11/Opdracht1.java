@@ -4,9 +4,6 @@ import java.applet.Applet;
 import java.awt.*;
 
 public class Opdracht1 extends Applet {
-    //decleratie
-
-    public void init() {}
 
     public void paint(Graphics g) {
         int teller;
