@@ -43,6 +43,9 @@ public class Praktijkopdracht2 extends Applet {
     private class submit implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             i = Integer.parseInt(String.valueOf(a++));
+            if (a > 10) {
+                a = 1;
+            }
             repaint();
         }
     }
