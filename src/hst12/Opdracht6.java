@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class Opdracht6 extends Applet {
     //decleratie
-    double[] tabel = {4,2,1,4,3,2,3,3,4,2,5};
+    int tabel[]  = {4,2,1,4,3,2,3,3,4,2,5};
     TextField tekstvak;
     Label label;
     int index;
@@ -22,7 +22,7 @@ public class Opdracht6 extends Applet {
     }
 
     public void paint(Graphics g) {
-        g.drawString("het ingevulde nummer komt " +  "keer voor.",20,20);
+        g.drawString("het ingevulde nummer komt " + aantal + " keer voor.",20,50);
     }
 
     private class listener implements ActionListener {
