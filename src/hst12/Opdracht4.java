@@ -13,6 +13,7 @@ public class Opdracht4 extends Applet {
     Label label;
     Button ok;
     int gezocht;
+    int index;
 
     public void init() {
         //initialisatie
@@ -28,10 +29,10 @@ public class Opdracht4 extends Applet {
 
     public void paint(Graphics g) {
         if (gevonden == true) {
-            g.drawString("De waarde is gevonden in de index",20,50);
+            g.drawString("De waarde is gevonden op de: " + index + "plaats",20,50);
         }
         else {
-            g.drawString("De waarde is niet gevonden in de index",20,50);
+            g.drawString("De waarde is niet gevonden",20,50);
         }
     }
 
@@ -42,6 +43,7 @@ public class Opdracht4 extends Applet {
 
             for (int i=0; i < getallen.length; i++) {
                 if (gezocht == getallen[i]) {
+                    index = i;
                     gevonden = true;
                     break;
                 }

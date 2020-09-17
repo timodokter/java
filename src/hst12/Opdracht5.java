@@ -15,6 +15,7 @@ public class Opdracht5 extends Applet {
         for (int teller = 0; teller < getallen.length; teller++) {
             if (getallen[teller] > max) {
                 max = getallen[teller];
+                break;
             }
         }
     }
