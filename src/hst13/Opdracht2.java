@@ -28,7 +28,7 @@ public class Opdracht2 extends Applet {
                 for (int c = 0; c <= ((w - 3) / 33) - 2; c++) {
                     g.fillRect((x + 21) + 33 * c, (y + 3) + 18 * a, 30, 15);
                     g.fillRect((x + 3), (y + 3) + 18 * a, 15, 15);
-                    g.fillRect(x + (((w - 3) / 33) * 33 - 12), (y + 3) + 18 * a, 15, 15);
+                    g.fillRect(x + (((w - 3) / 33) * 33 - 12), (y + 3) + 18 * a, 12, 15);
                 }
             }
         }
