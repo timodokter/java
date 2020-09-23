@@ -4,7 +4,6 @@ import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.management.ManagementFactory;
 
 public class Opdracht1 extends Applet {
 
