@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class Opdracht6 extends Applet {
     //decleratie
-    int tabel[]  = {4,2,1,4,3,2,3,3,4,2,5};
+    int[] tabel = {4,2,1,4,3,2,3,3,4,2,5};
     TextField tekstvak;
     Label label;
     int index;
