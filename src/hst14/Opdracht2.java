@@ -4,6 +4,7 @@ import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Opdracht2 extends Applet {
@@ -29,9 +30,7 @@ public class Opdracht2 extends Applet {
         deck = new String[52];
         hulp = new boolean[52];
 
-        for (int i = 0; i < hulp.length; i++) {
-            hulp[i] = false;
-        }
+        Arrays.fill(hulp, false);
 
         for (int i = 0; i < 13; i++) {
             deck[start] = kleur[0] + " " + nummer[i];
@@ -64,6 +63,7 @@ public class Opdracht2 extends Applet {
         for (int i = 0; i < 4; i++) {
             for (int a = 0; a < 13; a++) {
                 g.drawString(deck[b],20 + 110 * i, 70 + 12 * a);
+                b++;
             }
         }
     }
@@ -74,7 +74,8 @@ public class Opdracht2 extends Applet {
         for (int i = 0; i < randomize.length; i++) {
             randomize1 = new Random();
             int randPos = randomize1.nextInt(randomize.length);
-            String tmp = randomize[randPos];
+            String tmp = randomize[i];
+            randomize[i] = randomize[randPos];
             randomize[randPos] = tmp;
         }
     }
