@@ -1,11 +1,13 @@
 package hst14;
 
 import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.Random;
+import java.net.URL;
 
 public class Opdracht2 extends Applet {
 
@@ -14,6 +16,8 @@ public class Opdracht2 extends Applet {
     String[] kleur = {"Ruiten", "Harten", "Schoppen", "Klaver"};
     String[] nummer = {"aas", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen", "tien", "Boer", "Vrouw", "Heer"};
     Button delen;
+    private URL pad;
+    private AudioClip sound;
 
     boolean[] hulp;
     int start = 0;
@@ -29,6 +33,10 @@ public class Opdracht2 extends Applet {
 
         deck = new String[52];
         hulp = new boolean[52];
+
+        //geluid
+        pad = Opdracht2.class.getResource("./resources/");
+        sound = getAudioClip(pad, "applaus.wav");
 
         Arrays.fill(hulp, false);
 
@@ -58,6 +66,7 @@ public class Opdracht2 extends Applet {
         g.drawString("Speler 2",130,50);
         g.drawString("Speler 3",240,50);
         g.drawString("Speler 4",350,50);
+        sound.play();
 
         int b = 0;
         for (int i = 0; i < 4; i++) {
