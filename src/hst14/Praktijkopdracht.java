@@ -10,8 +10,6 @@ import java.net.URL;
 public class Praktijkopdracht extends Applet {
 
     //decleratie
-    URL pad2;
-    AudioClip sound;
     Image afbeelding;
     URL pad;
     TextField tekstvak = new TextField("",5);
@@ -43,10 +41,6 @@ public class Praktijkopdracht extends Applet {
         //de smileys
         pad = Praktijkopdracht.class.getResource("./resources/");
         afbeelding = getImage(pad, "smiley.jpg");
-
-        //geluid als je wint
-        pad2 = Praktijkopdracht.class.getResource("./recources/");
-        sound = getAudioClip(pad2, "applaus.wav");
     }
 
     public void paint(Graphics g) {
@@ -161,9 +155,8 @@ public class Praktijkopdracht extends Applet {
             }
 
             if (gameover == true) {
-                if (lost == true) {
+                if (lost == false) {
                     tekst1 = "Winner!";
-                    sound.play();
                 } else {
                     tekst1 = "Loser!";
                 }
