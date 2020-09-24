@@ -19,7 +19,7 @@ public class Opdracht2 extends Applet {
     Button delen;
 
     private String deelkaart() {
-        int random = new Random.nextInt(deck.length);
+        int random = new Random().nextInt(deck.length);
         String kaart = (deck[random]);
 
         String[] hulplijst= new String[deck.length - 1];
@@ -33,7 +33,6 @@ public class Opdracht2 extends Applet {
 
         deck = hulplijst;
 
-        return kaart;
         return kaart;
     }
 }
