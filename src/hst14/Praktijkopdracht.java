@@ -4,16 +4,19 @@ import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 public class Praktijkopdracht extends Applet {
 
     //decleratie
-    Label label = new Label(tekst1);
+
+    Image afbeelding;
+    URL pad;
     TextField tekstvak = new TextField("",5);
     Button speel = new Button("speel");
     Button reset = new Button("reset");
 
-    int smileys;
+    int smileys = 23;
     boolean turn = false;
     boolean gameover = false;
     boolean lost = false;
@@ -24,7 +27,7 @@ public class Praktijkopdracht extends Applet {
     public void init() {
 
         //initialisatie
-        setSize(500,300);
+        setSize(700,500);
 
         tekst1 = tekst2;
 
@@ -34,11 +37,18 @@ public class Praktijkopdracht extends Applet {
         add(tekstvak);
         add(speel);
         add(reset);
-        add(label);
+
+        //de smileys
+        pad = Praktijkopdracht.class.getResource("./resources/");
+        afbeelding = getImage(pad, "smiley.jpg");
     }
 
     public void paint(Graphics g) {
         g.drawString(tekst1,70,50);
+        g.drawString("er zijn nog: " + smileys + " smileys",70,70);
+        for (int i = 0; i < smileys; i++) {
+            g.drawImage(afbeelding,70 + 50 * (i % 4), 75 + 50 * (i / 4), 50, 50, this);
+        }
     }
 
     int botspeelt(int spelerzet, int smileys) {
@@ -58,8 +68,6 @@ public class Praktijkopdracht extends Applet {
                     botspeelt = 3;
                     break;
             }
-
-
         } else if (smileys == 21 || smileys == 17 || smileys == 13 || smileys == 9 || smileys == 5) {
             switch (spelerzet) {
                 case 1:
@@ -118,7 +126,7 @@ public class Praktijkopdracht extends Applet {
     private class speler implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            int spelerzet =0;
+            int spelerzet = 0 ;
             int bot = 0;
             if (Integer.parseInt(tekstvak.getText()) == 1 || Integer.parseInt(tekstvak.getText()) == 2 || Integer.parseInt(tekstvak.getText()) == 3) {
                 spelerzet = Integer.parseInt(tekstvak.getText());
@@ -162,7 +170,13 @@ public class Praktijkopdracht extends Applet {
     private class reseter implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            tekstvak.setText();
+            tekstvak.setText("");
+            tekst1 = tekst2;
+            smileys = 23;
+            lost = false;
+            gameover = false;
+            turn = true;
+            repaint();
         }
     }
 }
