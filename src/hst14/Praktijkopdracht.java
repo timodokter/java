@@ -9,9 +9,8 @@ import java.net.URL;
 
 public class Praktijkopdracht extends Applet {
 
-    //decleratie
-    Image afbeelding;
-    URL pad;
+    private AudioClip sound;
+    private Image afbeelding;
     TextField tekstvak = new TextField("",5);
     Button speel = new Button("speel");
     Button reset = new Button("reset");
@@ -39,8 +38,12 @@ public class Praktijkopdracht extends Applet {
         add(reset);
 
         //de smileys
-        pad = Praktijkopdracht.class.getResource("./resources/");
+        URL pad = Praktijkopdracht.class.getResource("./resources/");
         afbeelding = getImage(pad, "smiley.jpg");
+
+        //geluid als je wint
+        URL pad2 = Praktijkopdracht.class.getResource("./recources/");
+        sound = getAudioClip(pad2, "applaus.wav");
     }
 
     public void paint(Graphics g) {
@@ -128,6 +131,7 @@ public class Praktijkopdracht extends Applet {
         public void actionPerformed(ActionEvent e) {
             int spelerzet = 0 ;
             int bot = 0;
+
             if (Integer.parseInt(tekstvak.getText()) == 1 || Integer.parseInt(tekstvak.getText()) == 2 || Integer.parseInt(tekstvak.getText()) == 3) {
                 spelerzet = Integer.parseInt(tekstvak.getText());
                 bot = botspeelt(spelerzet, smileys);
@@ -160,6 +164,10 @@ public class Praktijkopdracht extends Applet {
                 } else {
                     tekst1 = "Loser!";
                 }
+            }
+
+            if (tekst1 == "Winner!") {
+                sound.play();
             }
 
             tekstvak.setText("");
