@@ -66,7 +66,6 @@ public class Opdracht2 extends Applet {
         g.drawString("Speler 2",130,50);
         g.drawString("Speler 3",240,50);
         g.drawString("Speler 4",350,50);
-        sound.play();
 
         int b = 0;
         for (int i = 0; i < 4; i++) {
@@ -94,6 +93,7 @@ public class Opdracht2 extends Applet {
         public void actionPerformed(ActionEvent e) {
             Random(deck);
             repaint();
+            sound.play();
         }
     }
 }
