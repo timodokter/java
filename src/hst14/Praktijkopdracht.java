@@ -9,7 +9,7 @@ import java.net.URL;
 
 public class Praktijkopdracht extends Applet {
 
-    private AudioClip sound;
+    public AudioClip sound;
     private Image afbeelding;
     TextField tekstvak = new TextField("",5);
     Button speel = new Button("speel");
@@ -164,10 +164,6 @@ public class Praktijkopdracht extends Applet {
                 } else {
                     tekst1 = "Loser!";
                 }
-            }
-
-            if (tekst1 == "Winner!") {
-                sound.play();
             }
 
             tekstvak.setText("");
