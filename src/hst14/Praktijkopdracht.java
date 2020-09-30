@@ -22,6 +22,7 @@ public class Praktijkopdracht extends Applet {
 
     String tekst1 = "";
     String tekst2 = "voer 1, 2 of 3 in en druk op speel";
+    String winner = "Winner!";
 
     public void init() {
 
@@ -42,7 +43,7 @@ public class Praktijkopdracht extends Applet {
         afbeelding = getImage(pad, "smiley.jpg");
 
         //geluid als je wint
-        URL pad2 = Praktijkopdracht.class.getResource("./recources/");
+        URL pad2 = Praktijkopdracht.class.getResource("./resources/");
         sound = getAudioClip(pad2, "applaus.wav");
     }
 
@@ -51,6 +52,9 @@ public class Praktijkopdracht extends Applet {
         g.drawString("er zijn nog: " + smileys + " smileys",70,70);
         for (int i = 0; i < smileys; i++) {
             g.drawImage(afbeelding,70 + 50 * (i % 4), 75 + 50 * (i / 4), 50, 50, this);
+        }
+        if (tekst1 == winner) {
+            sound.play();
         }
     }
 
@@ -160,7 +164,7 @@ public class Praktijkopdracht extends Applet {
 
             if (gameover == true) {
                 if (lost == false) {
-                    tekst1 = "Winner!";
+                    tekst1 = winner;
                 } else {
                     tekst1 = "Loser!";
                 }
