@@ -13,6 +13,9 @@ public class Opdracht extends Applet {
     int y;
     TextField tekstvak;
     Button enter;
+    int som;
+    String sommie;
+    boolean error = false;
 
     public void init() {
         //initialisatie
@@ -24,24 +27,33 @@ public class Opdracht extends Applet {
         submit submit = new submit();
         enter.addActionListener(submit);
         tekstvak.addActionListener(submit);
+        som = 0;
+        sommie = "de som = ";
     }
 
     public void paint(Graphics g) {
-        y = 20;
+        y = 50;
         if (getal >= 0 && getal == (int)getal) {
             for (int x = 1; x <= getal; x++) {
                 if (x % 2 == 0) {
                     if (x % 6 == 0) {
                         kwadraat = x * x;
                         g.drawString("" + kwadraat, 20, y);
-
+                        som = som + kwadraat;
                     } else {
                         System.out.println(x);
                         uitkomst = "" + x;
                         g.drawString("" + x, 20,y);
+                        som = som + x;
                     }
                     y += 15;
                 }
+            }
+            if (som != 0) {
+                g.drawString("" + sommie + som,20,y);
+                som = 0;
+            } else if (error == true){
+                g.drawString("" + sommie,20,y);
             }
         }
     }
@@ -50,8 +62,14 @@ public class Opdracht extends Applet {
         public void actionPerformed(ActionEvent e) {
             String input;
             input = tekstvak.getText();
-            getal = Integer.parseInt(input);
-
+            try {
+                getal = Integer.parseInt(input);
+            } catch (Exception s) {
+                getal = 0;
+                error = true;
+                sommie = "ERROR! u moet een getal invullen niet een woord of een letter.";
+            }
+            repaint();
         }
     }
 }
