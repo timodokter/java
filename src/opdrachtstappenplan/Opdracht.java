@@ -6,20 +6,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Opdracht extends Applet {
-    //decleratie
-    int getal;
+    int limietVanInvoerGebruiker;
     int kwadraat;
-    String uitkomst;
+    int som;
     int y;
+
+    String uitkomst;
+    String sommie;
+
     TextField tekstvak;
     Button enter;
-    int som;
-    String sommie;
+
     boolean error = false;
 
     public void init() {
-        //initialisatie
-        getal = 0;
+        limietVanInvoerGebruiker = 0;
         enter = new Button("Enter");
         tekstvak = new TextField("",10);
         add(tekstvak);
@@ -33,8 +34,8 @@ public class Opdracht extends Applet {
 
     public void paint(Graphics g) {
         y = 50;
-        if (getal >= 0 && getal == (int)getal) {
-            for (int x = 1; x <= getal; x++) {
+        if (limietVanInvoerGebruiker >= 0 && limietVanInvoerGebruiker == (int) limietVanInvoerGebruiker) {
+            for (int x = 1; x <= limietVanInvoerGebruiker; x++) {
                 if (x % 2 == 0) {
                     if (x % 6 == 0) {
                         kwadraat = x * x;
@@ -63,9 +64,9 @@ public class Opdracht extends Applet {
             String input;
             input = tekstvak.getText();
             try {
-                getal = Integer.parseInt(input);
+                limietVanInvoerGebruiker = Integer.parseInt(input);
             } catch (Exception s) {
-                getal = 0;
+                limietVanInvoerGebruiker = 0;
                 error = true;
                 sommie = "ERROR! u moet een getal invullen niet een woord of een letter.";
             }
