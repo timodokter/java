@@ -19,6 +19,7 @@ public class Praktijkopdracht extends Applet {
     boolean turn = false;
     boolean gameover = false;
     boolean lost = false;
+    boolean error = false;
 
     String tekst1 = "";
     String tekst2 = "voer 1, 2 of 3 in en druk op speel";
@@ -63,19 +64,11 @@ public class Praktijkopdracht extends Applet {
         double random = Math.random() * 3 + 1;
         int r = (int) random;
 
-        if (smileys == 23) {
-            switch (spelerzet) {
-                case 1:
-                    botspeelt = 1;
-                    break;
-                case 2:
-                    botspeelt = r;
-                    break;
-                case 3:
-                    botspeelt = 3;
-                    break;
-            }
-        } else if (smileys == 21 || smileys == 17 || smileys == 13 || smileys == 9 || smileys == 5) {
+        if (smileys == 23) botspeelt = getBotsPlayWith23Smileys (spelerzet);
+
+        if (smileys == 23)  {
+
+        } else if (smileys % 4 == 1) {
             switch (spelerzet) {
                 case 1:
                     botspeelt = 3;
@@ -130,16 +123,36 @@ public class Praktijkopdracht extends Applet {
         return botspeelt;
     }
 
+    private int getBotsPlayWith23Smileys (int spelerszet){
+        int returnn = 0;
+        switch (spelerszet) {
+            case 1:
+                returnn = 1;
+                break;
+            case 2:
+                returnn = 2;
+                break;
+            case 3:
+              returnn = 3;
+              break;
+        }
+        return returnn;
+    }
+
     private class speler implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             int spelerzet = 0 ;
             int bot = 0;
 
-            if (Integer.parseInt(tekstvak.getText()) == 1 || Integer.parseInt(tekstvak.getText()) == 2 || Integer.parseInt(tekstvak.getText()) == 3) {
+            try {
                 spelerzet = Integer.parseInt(tekstvak.getText());
-                bot = botspeelt(spelerzet, smileys);
+            } catch (Exception s) {
+                error = true;
+            }
 
+            if (spelerzet== 1 || spelerzet == 2 || spelerzet == 3) {
+                bot = botspeelt(spelerzet, smileys);
                 turn = true;
                 smileys -= spelerzet;
                 if (smileys <= 0 && gameover == false) {
@@ -169,6 +182,7 @@ public class Praktijkopdracht extends Applet {
                     tekst1 = "Loser!";
                 }
             }
+
 
             tekstvak.setText("");
             repaint();
