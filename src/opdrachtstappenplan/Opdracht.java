@@ -7,70 +7,86 @@ import java.awt.event.ActionListener;
 
 public class Opdracht extends Applet {
     int limietVanInvoerGebruiker;
-    int kwadraat;
-    int som;
-    int y;
+    int kwadraatVanTafelVanZes;
+    int totaleOpsommingVanGetallenInApplet;
+    int yCoordinaat;
 
-    String uitkomst;
-    String sommie;
+    String tekstVoorSom;
 
-    TextField tekstvak;
+    TextField invoerGetalVanGebruiker;
     Button enter;
 
-    boolean error = false;
+    boolean errorMeldingVerkeerdeInvoer = false;
 
     public void init() {
         limietVanInvoerGebruiker = 0;
         enter = new Button("Enter");
-        tekstvak = new TextField("",10);
-        add(tekstvak);
+        invoerGetalVanGebruiker = new TextField("",10);
+        add(invoerGetalVanGebruiker);
         add(enter);
         submit submit = new submit();
         enter.addActionListener(submit);
-        tekstvak.addActionListener(submit);
-        som = 0;
-        sommie = "de som = ";
+        invoerGetalVanGebruiker.addActionListener(submit);
+        totaleOpsommingVanGetallenInApplet = 0;
+        tekstVoorSom = "de som = ";
+        yCoordinaat = 50;
     }
 
     public void paint(Graphics g) {
-        y = 50;
-        if (limietVanInvoerGebruiker >= 0 && limietVanInvoerGebruiker == (int) limietVanInvoerGebruiker) {
-            for (int x = 1; x <= limietVanInvoerGebruiker; x++) {
-                if (x % 2 == 0) {
-                    if (x % 6 == 0) {
-                        kwadraat = x * x;
-                        g.drawString("" + kwadraat, 20, y);
-                        som = som + kwadraat;
+        doAlles(g);
+    }
+
+    private void doAlles(Graphics g){
+        if (limietVanInvoerGebruiker >= 0) {
+            for (int huidigGetal = 1; huidigGetal <= limietVanInvoerGebruiker; huidigGetal++) {
+                if (huidigGetal % 2 == 0) {
+                    if (huidigGetal % 6 == 0) {
+                        kwadraatVanTafelVanZes = huidigGetal * huidigGetal;
+                        g.drawString("" + kwadraatVanTafelVanZes, 20, yCoordinaat);
+                        totaleOpsommingVanGetallenInApplet = totaleOpsommingVanGetallenInApplet + kwadraatVanTafelVanZes;
                     } else {
-                        System.out.println(x);
-                        uitkomst = "" + x;
-                        g.drawString("" + x, 20,y);
-                        som = som + x;
+                        g.drawString("" + huidigGetal, 20, yCoordinaat);
+                        totaleOpsommingVanGetallenInApplet = totaleOpsommingVanGetallenInApplet + huidigGetal;
                     }
-                    y += 15;
+                    yCoordinaat += 15;
                 }
             }
-            if (som != 0) {
-                g.drawString("" + sommie + som,20,y);
-                som = 0;
-            } else if (error == true){
-                g.drawString("" + sommie,20,y);
-            }
+            this.displayUitkomst(g);
         }
     }
 
     private class submit implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             String input;
-            input = tekstvak.getText();
+            input = invoerGetalVanGebruiker.getText();
             try {
                 limietVanInvoerGebruiker = Integer.parseInt(input);
             } catch (Exception s) {
-                limietVanInvoerGebruiker = 0;
-                error = true;
-                sommie = "ERROR! u moet een getal invullen niet een woord of een letter.";
+                errorAfhandeling(false);
+            }
+            if (limietVanInvoerGebruiker < 0) {
+                errorAfhandeling(true);
             }
             repaint();
+        }
+    }
+
+    private void displayUitkomst (Graphics g) {
+        if (totaleOpsommingVanGetallenInApplet != 0) {
+            g.drawString("" + tekstVoorSom + totaleOpsommingVanGetallenInApplet,20, yCoordinaat);
+            totaleOpsommingVanGetallenInApplet = 0;
+        } else if (errorMeldingVerkeerdeInvoer == true){
+            g.drawString("" + tekstVoorSom,20, yCoordinaat);
+        }
+    }
+
+    private void errorAfhandeling (boolean invoerIsGetal) {
+        limietVanInvoerGebruiker = 0;
+        errorMeldingVerkeerdeInvoer = true;
+        if (invoerIsGetal == true) {
+            tekstVoorSom = "ERROR! u moet een positief getal invoeren niet een negatief getal.";
+        } else {
+            tekstVoorSom = "ERROR! u moet een positief getal invoeren niet een woord of een letter.";
         }
     }
 }
